@@ -1,5 +1,5 @@
 def nyc_pigeon_organizer(data)
- pigeon_list = {}
+  pigeon_list = {}
 
   pigeon_details = []
   data.keys.map { |key| pigeon_details.push(key) }
