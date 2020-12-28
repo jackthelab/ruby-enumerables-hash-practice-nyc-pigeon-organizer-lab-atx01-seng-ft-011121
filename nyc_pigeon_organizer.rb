@@ -10,6 +10,13 @@ def nyc_pigeon_organizer(data)
     end
   end
   
-  data.keys.keys
+  pigeon_traits.each do |trait|
+    sub_traits = data.trait.keys
+    sub_traits.each do |sub_trait|
+      data[trait][sub_trait].each do |name|
+        pigeon_list[name][trait].push(sub_trait.to_s)
+      end
+    end
+  end
   
 end
