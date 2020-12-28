@@ -2,10 +2,10 @@ def nyc_pigeon_organizer(data)
  pigeon_list = {}
 
   pigeon_details = []
-  pigeon_hash.keys.map { |key| pigeon_details.push(key) }
+  data.keys.map { |key| pigeon_details.push(key) }
   #puts pigeon_details
 
-  pigeon_names = pigeon_hash[pigeon_hash.keys[0]].values.flatten.uniq
+  pigeon_names = data[data.keys[0]].values.flatten.uniq
   #puts pigeon_names
 
   pigeon_names.each do |name|
@@ -16,10 +16,10 @@ def nyc_pigeon_organizer(data)
   end
 
   pigeon_details.each do |detail|
-    sub_keys = pigeon_hash[detail].keys
+    sub_keys = data[detail].keys
     #puts sub_keys
     sub_keys.each do |sub_key|
-      pigeon_hash[detail][sub_key].each do |name|
+      data[detail][sub_key].each do |name|
         pigeon_list[name][detail].push(sub_key.to_s)
       end
     end
